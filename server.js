@@ -8,14 +8,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-/* const routeOne = require("./routes/apiRoutes");
-app.use(routeOne);
-
-const routeTwo = require("./routes/htmlRoutes");
-app.use(routeTwo); */
-
-//api
-//tables
 const tableData = [
   {
     name: "Ffej",
@@ -67,14 +59,14 @@ app.post("/api/tables", (req, res) => {
 
 //html
 app.get("/tables", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Unsolved/public/tables.html"));
+  res.sendFile(path.join(__dirname, "../restresapp/public/tables.html"));
 });
 
 app.get("/reserve", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Unsolved/public/reserve.html"));
+  res.sendFile(path.join(__dirname, "../restresapp/public/reserve.html"));
 });
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Unsolved/public/home.html"));
+  res.sendFile(path.join(__dirname, "../restresapp/public/home.html"));
 });
 
 app.listen(PORT, () => {
